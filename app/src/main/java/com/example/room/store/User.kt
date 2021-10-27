@@ -14,5 +14,9 @@ data class User(
         fun mock():User{
             return User(123,"林","武淮")
         }
+
+        fun mockUpdate(): User {
+            return User(123, "林", "Vinci")
+        }
     }
 }
