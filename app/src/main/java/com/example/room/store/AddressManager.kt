@@ -8,6 +8,7 @@ class AddressManager {
     val appDb by lazy {
         Room.databaseBuilder(MyApp.app, AppDatabase::class.java, "addresses")
             .allowMainThreadQueries()
+            .addMigrations(*(RoomMigration.instance.migrations.toTypedArray()))
             .build()
     }
 

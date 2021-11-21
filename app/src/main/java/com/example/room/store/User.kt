@@ -8,15 +8,17 @@ import androidx.room.PrimaryKey
 data class User(
     @PrimaryKey val uid: Int,
     @ColumnInfo(name = "first_name") val firstName: String?,
-    @ColumnInfo(name = "last_name") val lastName: String?
+    @ColumnInfo(name = "last_name") val lastName: String?,
+    val age: Int? = null,
+    val sex: Int? = null
 ){
     companion object{
         fun mock():User{
-            return User(123,"林","武淮")
+            return User(123,"林","武淮",24,0)
         }
 
         fun mockUpdate(): User {
-            return User(123, "林", "Vinci")
+            return User(123, "林", "Vinci",24,0)
         }
     }
 }
