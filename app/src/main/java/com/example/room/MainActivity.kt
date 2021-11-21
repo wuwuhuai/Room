@@ -26,6 +26,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             tvRead.setOnClickListener(this@MainActivity)
             tvUpdate.setOnClickListener(this@MainActivity)
         }
+
+        observeUserTable()
+
+    }
+    private fun observeUserTable() {
+        AddressManager.instance.appDb.userDao().getAll().observe(this, {
+            binding.tvData.text  = it.toString()
+        })
     }
 
     override fun onClick(view: View) {
